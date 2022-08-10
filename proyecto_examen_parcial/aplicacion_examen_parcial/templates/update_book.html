@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block titulo %}
+<h1>Actualizar datos</h1>
+{% endblock %} {% block contenido %}
+
+<h2 style="color:white">Actualizando libro:{{ object.id}}</h2>
+<form method="POST">
+    <div style="background-color:white ;">
+        <table style="color:black">
+            {% csrf_token %} {{ form.as_p }} Imagen actual:<br><img src='{{ MEDIA_URL }}{{ object.imagen }}' height="300">
+        </table>
+        <br>
+        <button class="btn btn-primary" style="width:150px" type="submit">Actualizar</button>
+    </div>
+</form>
+<br>
+<p><button class="btn btn-warning" style="width:150px" onclick="location.href='/'">Cancelar</button></p>
+{% endblock %}

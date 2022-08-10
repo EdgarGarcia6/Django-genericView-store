@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block contenido %}
+<h1 style="color:white">Agregar alumno</h1>
+<h2 style="color:white">Rellena los siguientes campos</h2>
+
+<form enctype="multipart/form-data" method="POST" >
+    {% csrf_token %}
+
+    <div class="card" style="width: 90%; left:5%;">
+        <div class="card-body" style="background-color:rgb(47,79,79); color:white">
+            <h1 class="card-title">Datos generales de la película </h1>
+            <h6 class="card-subtitle mb-2" style="color:white">Rellena los campos para crear una película:</h6>
+            <p class="card-text">
+                <table border="1" style="width: 100%; color:black">
+                    <tbody>
+                        <tr>
+                            <td align="center" style="width: 10%;"><strong>Titulo</strong></td>
+                            <td align="center" style="width: 10%;"><strong>Director</strong></td>
+                            <td align="center" style="width: 10%;"><strong>Sinópsis</strong></td>
+                            <td align="center" style="width: 10%;"><strong>Imágen/Portada</strong></td>                            
+                        </tr>
+                        <tr style="height: 70px;">
+                            <td>
+                                <p>{{form.titulo}}</p>
+                            </td>
+                            <td>
+                                <p>{{form.casa_productora}}</p>
+                            </td>
+                            <td>
+                                <p>{{form.descripcion}}</p>
+                            </td>
+                            <td>
+                                <p>{{form.imagen}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    
+    <p><button class="btn btn-primary" style="width:150px" type="submit">Añadir</button></p>
+</form>
+<p><button class="btn btn-warning" style="width:150px" onclick="location.href='/'">Cancelar</button></p>
+{% endblock %}

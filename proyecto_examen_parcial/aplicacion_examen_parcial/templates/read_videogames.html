@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block contenido %}
+
+<div class="card" style="width: 90%; left:5%;">
+    <div class="card-body">
+        <h1 class="card-title">Detalles de libro</h1>
+        <h6 class="card-subtitle mb-2 text-muted">Los datos recuperados se enlistan a continuación:</h6>
+        <p class="card-text">
+            <table border="1" style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td>
+                            TITULO
+                        </td>
+                        <td>
+                            <p>{{ object.titulo }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CASA DESARROLLADORA
+                        </td>
+                        <td>
+                            <p>{{ object.casa_desarrolladora }}</p>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            PORTADA / IMÁGEN
+                        </td>
+                        <td>
+                            <img src='{{ MEDIA_URL }}{{ object.imagen }}' height="500px"></p>
+        </td>
+        </tr>
+
+        </tbody>
+        </table>
+        </p>
+        <p>
+            <a class="btn btn-primary" onclick="location.href='/'">Regresar a catalogos </a>
+        </p>
+    </div>
+</div>
+{% endblock %}
